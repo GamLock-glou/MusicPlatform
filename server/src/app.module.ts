@@ -5,6 +5,8 @@ import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import * as path from 'path';
 import { AlbumModule } from './album/album.mobule';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -18,5 +20,7 @@ import { AlbumModule } from './album/album.mobule';
     FileModule,
     AlbumModule,
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
