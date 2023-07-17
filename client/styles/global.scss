@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 90px;
+}
+
+.btnUpload {
+  color: rgb(0, 0, 0);
+  &:hover {
+    background:rgba(0, 0, 0, 0.056);
+  }
+}
+
+.btn {
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(80, 80, 80);
+  font-size: 16px;
+  &:hover {
+    background:rgba(0, 0, 0, 0.056);
+    border: 1px solid rgb(0, 0, 0);
+  }
+}
+
+.containerTrack {
+  width: 900px;
+}
