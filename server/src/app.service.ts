@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
-
 @Injectable()
 export class AppService {
-  async getInfo() {
+  getInfo(): { version: string; project: string } {
     return { version: '1.0.1', project: 'music platform' };
   }
 }
