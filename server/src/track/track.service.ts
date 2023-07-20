@@ -5,8 +5,8 @@ import { Model, ObjectId } from 'mongoose';
 import { Comment, CommentDocument } from './schemas/comment.schema';
 import { CreateTrackDto } from './dto/create-track.dto';
 import { CreateCommentDto } from './dto/create-comment.dto';
-import { FileService, FileType } from 'src/file/file.service';
-import { Album, AlbumDocument } from 'src/album/schemas/album.schema';
+import { FileService, FileType } from '../file/file.service';
+import { Album, AlbumDocument } from '../album/schemas/album.schema';
 
 @Injectable()
 export class TrackService {
