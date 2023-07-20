@@ -1,6 +1,6 @@
 import MainLayout from "@/layouts/MainLayout";
-import React, { useState } from "react";
-import { Button, Grid, TextField, Divider } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Button, Grid, TextField, Divider, Box } from "@mui/material";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 import { commentsApi, tracksApi } from "@/queries/queries";
@@ -17,6 +17,13 @@ const TrackPage = ({ serverTrack }: TrackPageProps) => {
   const router = useRouter();
   const username = useInput("");
   const text = useInput("");
+  useEffect(() => {
+    tracksApi.listenTrack(serverTrack._id).then(response => {
+      if(response.status === 201) {
+        setTrack({...track, listens: track.listens + 1})
+      }
+    })
+  }, [])
   const addComment = async () => {
     try {
       const comment: IPostComment = {
@@ -66,8 +73,10 @@ const TrackPage = ({ serverTrack }: TrackPageProps) => {
         <p>{track.text}</p>
         <Divider />
         <h1>Comments</h1>
-        <Grid container direction="column">
-          <TextField {...username} label="UserName" fullWidth />
+        <Grid container direction="column" marginBottom={7}>
+          <Box pb={2}>
+            <TextField {...username} label="UserName" fullWidth />
+          </Box>
           <TextField {...text} label="Comment" fullWidth multiline rows={4} />
           <Button onClick={addComment} className="btnUpload">
             Send

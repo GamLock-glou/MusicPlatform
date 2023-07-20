@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import * as path from 'path';
+import { AlbumModule } from './album/album.mobule';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import * as path from 'path';
     ),
     TrackModule,
     FileModule,
+    AlbumModule,
   ],
 })
 export class AppModule {}

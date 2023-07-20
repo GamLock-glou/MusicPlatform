@@ -33,6 +33,10 @@ export const tracksApi = {
       .delete(`/tracks/${id}`)
       .then((response) => response.data);
   },
+  async listenTrack(id: string): Promise<{status: number}> {
+    return await instance
+    .post(`/tracks/listen/${id}`)
+  }
 };
 
 export const albumsApi = {

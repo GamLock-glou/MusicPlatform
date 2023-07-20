@@ -11,7 +11,7 @@ import { NextAndBackStepper } from "@/components/Stepper/NextAndBackStepper";
 import { IStepOne } from "@/types/types";
 import Image from "next/image";
 
-const steps = ["Information about track", "Upload the cover"];
+const steps = ["Information about album", "Upload the cover"];
 const Create = () => {
   const router = useRouter();
   const [srcPicture, setSrcPicture] = useState<string>("");
